@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handjet&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{font-family: 'Handjet', cursive;}
+</style>
+<body class="bg-fuchsia-200">
+  
+    <div class="text-center">
+
+        <form class="flex flex-col w-1/2 mx-auto my-[200px] gap-4" action="">
+            <h1 class="text-2xl my-3  ">Form Login Tryout App</h1>
+            <input class="username p-2 rounded-xl w-2/3 mx-auto border-2 border-amber-400" 
+            type="text" 
+            placeholder="Username" > 
+
+            <input class="password p-2 rounded-xl w-2/3 mx-auto border-2 border-amber-400" 
+            type="password" name="" id="" placeholder="password">
+
+            <button class="bg-white text-sky-500 p-1 rounded-xl hover:bg-pink-200 hover:text-xl hover:shadow-2xl hover:text-black w-2/3 mx-auto border-2 border-amber-400">
+              <a href="soal.html">
+                Login
+              </a>
+              
+            </button>
+        </form>
+       
+    </div>
+
+      <script>
+    
+        // 1. Tangkap Data yang di input user
+        const username = document.querySelector('.username')
+        const password = document.querySelector('.password')
+        const btn = document.querySelector('button')
+
+        // 2. Pengkondisian Dilakukan saat user menekan tombol login
+        btn.addEventListener('click', function(e){
+          e.preventDefault()
+          console.log(username.value)
+          console.log(password.value)
+
+        // 3. kalau benar, arahkan user ke halaman soal, kalau salah cegah user!
+          if(username.value == "Laila"){
+            if(password.value == "12345"){
+              alert('Login Kamu Berhasil!')
+              location.href = "soal.html"
+            }else{
+              alert('Password atau Username kamu Salah nih!')
+            }
+
+          }else{
+            alert('Password atau Username kamu Salah nih!')
+          }
+        })
+
+      </script>
+
+</body>
+</html>
